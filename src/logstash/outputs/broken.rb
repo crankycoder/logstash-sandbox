@@ -9,12 +9,10 @@ class LogStash::Outputs::Broken < LogStash::Outputs::Base
   config_name "broken"
   plugin_status "beta"
 
-  public
+  :wqpublic
   def register
     time_str = Time.now.utc.iso8601
-    json_data = event.to_json
-
-    puts "This shouldn't break: #{time_str} Event: #{json_data}"
+    puts "This shouldn't break: #{time_str}"
   end # def register
 
   public
